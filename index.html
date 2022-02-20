@@ -283,6 +283,17 @@ ol > li {
 	margin-right: 1em;
 }
 
+.simple-table {
+	margin-top: 1em;
+	font-size: 0.875rem;
+}
+
+.simple-table-header {
+	background: rgb(247, 246, 243);
+	color: black;
+	font-weight: 500;
+}
+
 time {
 	opacity: 0.5;
 }
@@ -320,7 +331,7 @@ img.icon {
 	display: block;
 	object-fit: cover;
 	width: 100%;
-	height: 30vh;
+	max-height: 30vh;
 }
 
 .page-header-icon {
@@ -461,151 +472,169 @@ blockquote {
 	margin-top: 0.25em;
 }
 
-.sans { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol"; }
-.code { font-family: "SFMono-Regular", Consolas, "Liberation Mono", Menlo, Courier, monospace; }
-.serif { font-family: Lyon-Text, Georgia, YuMincho, "Yu Mincho", "Hiragino Mincho ProN", "Hiragino Mincho Pro", "Songti TC", "Songti SC", "SimSun", "Nanum Myeongjo", NanumMyeongjo, Batang, serif; }
+.sans { font-family: ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol"; }
+.code { font-family: "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace; }
+.serif { font-family: Lyon-Text, Georgia, ui-serif, serif; }
 .mono { font-family: iawriter-mono, Nitti, Menlo, Courier, monospace; }
-.pdf .sans { font-family: Inter, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK SC', 'Noto Sans CJK KR'; }
-
-.pdf .code { font-family: Source Code Pro, "SFMono-Regular", Consolas, "Liberation Mono", Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC', 'Noto Sans Mono CJK KR'; }
-
-.pdf .serif { font-family: PT Serif, Lyon-Text, Georgia, YuMincho, "Yu Mincho", "Hiragino Mincho ProN", "Hiragino Mincho Pro", "Songti TC", "Songti SC", "SimSun", "Nanum Myeongjo", NanumMyeongjo, Batang, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK SC', 'Noto Sans CJK KR'; }
-
-.pdf .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC', 'Noto Sans Mono CJK KR'; }
-
+.pdf .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK JP'; }
+.pdf:lang(zh-CN) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK SC'; }
+.pdf:lang(zh-TW) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK TC'; }
+.pdf:lang(ko-KR) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK KR'; }
+.pdf .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK JP'; }
+.pdf:lang(zh-CN) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC'; }
+.pdf:lang(zh-TW) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK TC'; }
+.pdf:lang(ko-KR) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK KR'; }
+.pdf .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK JP'; }
+.pdf:lang(zh-CN) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK SC'; }
+.pdf:lang(zh-TW) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK TC'; }
+.pdf:lang(ko-KR) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK KR'; }
+.pdf .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK JP'; }
+.pdf:lang(zh-CN) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC'; }
+.pdf:lang(zh-TW) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK TC'; }
+.pdf:lang(ko-KR) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK KR'; }
 .highlight-default {
+	color: rgba(55, 53, 47, 1);
 }
 .highlight-gray {
-	color: rgb(155,154,151);
+	color: rgba(120, 119, 116, 1);
+	fill: rgba(120, 119, 116, 1);
 }
 .highlight-brown {
-	color: rgb(100,71,58);
+	color: rgba(159, 107, 83, 1);
+	fill: rgba(159, 107, 83, 1);
 }
 .highlight-orange {
-	color: rgb(217,115,13);
+	color: rgba(217, 115, 13, 1);
+	fill: rgba(217, 115, 13, 1);
 }
 .highlight-yellow {
-	color: rgb(223,171,1);
+	color: rgba(203, 145, 47, 1);
+	fill: rgba(203, 145, 47, 1);
 }
 .highlight-teal {
-	color: rgb(15,123,108);
+	color: rgba(68, 131, 97, 1);
+	fill: rgba(68, 131, 97, 1);
 }
 .highlight-blue {
-	color: rgb(11,110,153);
+	color: rgba(51, 126, 169, 1);
+	fill: rgba(51, 126, 169, 1);
 }
 .highlight-purple {
-	color: rgb(105,64,165);
+	color: rgba(144, 101, 176, 1);
+	fill: rgba(144, 101, 176, 1);
 }
 .highlight-pink {
-	color: rgb(173,26,114);
+	color: rgba(193, 76, 138, 1);
+	fill: rgba(193, 76, 138, 1);
 }
 .highlight-red {
-	color: rgb(224,62,62);
+	color: rgba(212, 76, 71, 1);
+	fill: rgba(212, 76, 71, 1);
 }
 .highlight-gray_background {
-	background: rgb(235,236,237);
+	background: rgba(241, 241, 239, 1);
 }
 .highlight-brown_background {
-	background: rgb(233,229,227);
+	background: rgba(244, 238, 238, 1);
 }
 .highlight-orange_background {
-	background: rgb(250,235,221);
+	background: rgba(251, 236, 221, 1);
 }
 .highlight-yellow_background {
-	background: rgb(251,243,219);
+	background: rgba(251, 243, 219, 1);
 }
 .highlight-teal_background {
-	background: rgb(221,237,234);
+	background: rgba(237, 243, 236, 1);
 }
 .highlight-blue_background {
-	background: rgb(221,235,241);
+	background: rgba(231, 243, 248, 1);
 }
 .highlight-purple_background {
-	background: rgb(234,228,242);
+	background: rgba(244, 240, 247, 0.8);
 }
 .highlight-pink_background {
-	background: rgb(244,223,235);
+	background: rgba(249, 238, 243, 0.8);
 }
 .highlight-red_background {
-	background: rgb(251,228,228);
+	background: rgba(253, 235, 236, 1);
 }
 .block-color-default {
 	color: inherit;
 	fill: inherit;
 }
 .block-color-gray {
-	color: rgba(55, 53, 47, 0.6);
-	fill: rgba(55, 53, 47, 0.6);
+	color: rgba(120, 119, 116, 1);
+	fill: rgba(120, 119, 116, 1);
 }
 .block-color-brown {
-	color: rgb(100,71,58);
-	fill: rgb(100,71,58);
+	color: rgba(159, 107, 83, 1);
+	fill: rgba(159, 107, 83, 1);
 }
 .block-color-orange {
-	color: rgb(217,115,13);
-	fill: rgb(217,115,13);
+	color: rgba(217, 115, 13, 1);
+	fill: rgba(217, 115, 13, 1);
 }
 .block-color-yellow {
-	color: rgb(223,171,1);
-	fill: rgb(223,171,1);
+	color: rgba(203, 145, 47, 1);
+	fill: rgba(203, 145, 47, 1);
 }
 .block-color-teal {
-	color: rgb(15,123,108);
-	fill: rgb(15,123,108);
+	color: rgba(68, 131, 97, 1);
+	fill: rgba(68, 131, 97, 1);
 }
 .block-color-blue {
-	color: rgb(11,110,153);
-	fill: rgb(11,110,153);
+	color: rgba(51, 126, 169, 1);
+	fill: rgba(51, 126, 169, 1);
 }
 .block-color-purple {
-	color: rgb(105,64,165);
-	fill: rgb(105,64,165);
+	color: rgba(144, 101, 176, 1);
+	fill: rgba(144, 101, 176, 1);
 }
 .block-color-pink {
-	color: rgb(173,26,114);
-	fill: rgb(173,26,114);
+	color: rgba(193, 76, 138, 1);
+	fill: rgba(193, 76, 138, 1);
 }
 .block-color-red {
-	color: rgb(224,62,62);
-	fill: rgb(224,62,62);
+	color: rgba(212, 76, 71, 1);
+	fill: rgba(212, 76, 71, 1);
 }
 .block-color-gray_background {
-	background: rgb(235,236,237);
+	background: rgba(241, 241, 239, 1);
 }
 .block-color-brown_background {
-	background: rgb(233,229,227);
+	background: rgba(244, 238, 238, 1);
 }
 .block-color-orange_background {
-	background: rgb(250,235,221);
+	background: rgba(251, 236, 221, 1);
 }
 .block-color-yellow_background {
-	background: rgb(251,243,219);
+	background: rgba(251, 243, 219, 1);
 }
 .block-color-teal_background {
-	background: rgb(221,237,234);
+	background: rgba(237, 243, 236, 1);
 }
 .block-color-blue_background {
-	background: rgb(221,235,241);
+	background: rgba(231, 243, 248, 1);
 }
 .block-color-purple_background {
-	background: rgb(234,228,242);
+	background: rgba(244, 240, 247, 0.8);
 }
 .block-color-pink_background {
-	background: rgb(244,223,235);
+	background: rgba(249, 238, 243, 0.8);
 }
 .block-color-red_background {
-	background: rgb(251,228,228);
+	background: rgba(253, 235, 236, 1);
 }
-.select-value-color-default { background-color: rgba(206,205,202,0.5); }
-.select-value-color-gray { background-color: rgba(155,154,151, 0.4); }
-.select-value-color-brown { background-color: rgba(140,46,0,0.2); }
-.select-value-color-orange { background-color: rgba(245,93,0,0.2); }
-.select-value-color-yellow { background-color: rgba(233,168,0,0.2); }
-.select-value-color-green { background-color: rgba(0,135,107,0.2); }
-.select-value-color-blue { background-color: rgba(0,120,223,0.2); }
-.select-value-color-purple { background-color: rgba(103,36,222,0.2); }
-.select-value-color-pink { background-color: rgba(221,0,129,0.2); }
-.select-value-color-red { background-color: rgba(255,0,26,0.2); }
+.select-value-color-pink { background-color: rgba(245, 224, 233, 1); }
+.select-value-color-purple { background-color: rgba(232, 222, 238, 1); }
+.select-value-color-green { background-color: rgba(219, 237, 219, 1); }
+.select-value-color-gray { background-color: rgba(227, 226, 224, 1); }
+.select-value-color-opaquegray { background-color: rgba(255, 255, 255, 0.0375); }
+.select-value-color-orange { background-color: rgba(250, 222, 201, 1); }
+.select-value-color-brown { background-color: rgba(238, 224, 218, 1); }
+.select-value-color-red { background-color: rgba(255, 226, 221, 1); }
+.select-value-color-yellow { background-color: rgba(253, 236, 200, 1); }
+.select-value-color-blue { background-color: rgba(211, 229, 239, 1); }
 
 .checkbox {
 	display: inline-flex;
@@ -625,10 +654,10 @@ blockquote {
 	background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20x%3D%220.75%22%20y%3D%220.75%22%20width%3D%2214.5%22%20height%3D%2214.5%22%20fill%3D%22white%22%20stroke%3D%22%2336352F%22%20stroke-width%3D%221.5%22%2F%3E%0A%3C%2Fsvg%3E");
 }
 	
-</style></head><body><article id="33a77965-3685-43ed-8365-9ec715a57391" class="page mono"><header><img class="page-cover-image" src="index/IMG_20210204_2010493-01.jpeg" style="object-position:center 100%"/><div class="page-header-icon page-header-icon-with-cover"><span class="icon">🔭</span></div><h1 class="page-title">Hey there, I am Aman! 👋🏽</h1></header><div class="page-body"><div id="a2643fb5-2c49-48cf-ba00-ca28e79392c6" class="column-list"><div id="c05044be-ddff-4a03-aeeb-6c6622237697" style="width:68.75%" class="column"><blockquote id="d347b057-9bff-42aa-aa89-fff438b7ae84" class=""><strong>My pronouns are (he/him). I am an engineering undergraduate from the <a href="https://ducic.ac.in/">University of Delhi</a></strong>.</blockquote><p id="399e2572-f877-487e-bee6-0ce273f80c92" class="">
-I am deeply passionate about <strong>Technology</strong>, <strong>Space</strong> and <strong>Physics</strong>.
-</p></div><div id="9bff7f7c-a227-4ac6-bdd9-00a2562c2e25" style="width:31.25%" class="column"><figure id="94c4691c-a4fc-4e87-b32d-1f1c849d211d" class="image"><a href="index/Aman-Goel.jpg"><img style="width:192px" src="index/Aman-Goel.jpg"/></a></figure></div></div><p id="3447ae13-539d-4f9d-b70e-509b72f9bc80" class="">I am also an <strong>open-source enthusiast</strong> who is always keen to learn more about everything from <strong>Privacy</strong>, <strong>AI</strong>, <strong>Cybersecurity</strong> to <strong>Climate Change</strong>, <strong>Social Issues</strong> and <strong>Sustainability</strong>.
-</p><p id="a4cbe21b-3502-4657-a08b-4a77c6444272" class="">I&#x27;ll be working with <strong><a href="https://iris-hep.org/fellows/amangoel185.html">IRIS-HEP</a></strong> on the <strong><a href="https://github.com/scikit-hep/hist">Hist</a></strong> project over the course of summer 2021.
+</style></head><body><article id="33a77965-3685-43ed-8365-9ec715a57391" class="page mono"><header><img class="page-cover-image" src="Hey%20there,%2094c46/IMG_20210204_2010493-01.jpeg" style="object-position:center 100%"/><div class="page-header-icon page-header-icon-with-cover"><span class="icon">🔭</span></div><h1 class="page-title">Hey there, I am Aman! 👋🏽</h1></header><div class="page-body"><div id="a2643fb5-2c49-48cf-ba00-ca28e79392c6" class="column-list"><div id="c05044be-ddff-4a03-aeeb-6c6622237697" style="width:68.75%" class="column"><blockquote id="d347b057-9bff-42aa-aa89-fff438b7ae84" class=""><strong>My pronouns are (he/him). I am a senior engineering undergraduate from the University of Delhi. My majors are Information Technology and Mathematical Innovations.</strong></blockquote><p id="399e2572-f877-487e-bee6-0ce273f80c92" class="">
+I am deeply passionate about <strong>Computer Science Research</strong>, <strong>Analysis Systems</strong>, <strong>Physics</strong> and <strong>Space</strong>. 
+</p></div><div id="9bff7f7c-a227-4ac6-bdd9-00a2562c2e25" style="width:31.25%" class="column"><figure id="94c4691c-a4fc-4e87-b32d-1f1c849d211d" class="image"><a href="Hey%20there,%2094c46/AmanGoel.jpg"><img style="width:3496px" src="Hey%20there,%2094c46/AmanGoel.jpg"/></a></figure></div></div><p id="3447ae13-539d-4f9d-b70e-509b72f9bc80" class="">I am also an open-source enthusiast who is always keen to learn more about everything from Research Software, Ethics of Technology to Climate Change and Sustainability.
+</p><p id="a4cbe21b-3502-4657-a08b-4a77c6444272" class="">Currently, I am working as an <a href="https://iris-hep.org/fellows/amangoel185.html"><strong>IRIS-HEP Fellow</strong></a> on the <a href="https://github.com/scikit-hep/hist"><strong>Hist</strong></a> and <a href="https://github.com/henryiii/uproot-browser"><strong>uproot-browser</strong></a> libraries.</p><p id="b0fa7e26-334b-4d39-9f70-b3693e2beddb" class="">
 </p><p id="7bcb7b5c-7f3e-40ea-bfb1-bf0b6efb0c60" class="">I am actively exploring my options for pursuing higher studies, preferably in one of my interest areas, and if possible, at their intersection.
-</p><p id="1524ddc2-ac78-4cf1-b2cb-56d3c90f5b8e" class="">Apart from this, I love photographs, words, exploring new things, travelling, and making friends. :)</p><h1 id="4229cec5-b0b4-42ce-9e62-4664768cc6bc" class="">🌏 Connect with me</h1><p id="f364a6b7-d358-4bf8-bbc5-1ca02642b999" class=""><strong>📧 </strong><strong><a href="mailto:aman.goel185@gmail.com">Email</a></strong></p><p id="8f0c230a-60b4-4831-afc8-8ac704ac1679" class=""><strong>🐦 </strong><strong><a href="http://twitter.com/mightaswellcode">Twitter</a></strong></p><p id="9bdb4939-9c20-4aa9-846d-447cdb5b2492" class=""><strong>🔗 </strong><strong><a href="https://linkedin.com/in/amangoel185">LinkedIn</a></strong></p><hr id="85eb469b-34c5-48b0-8ff6-41cd2eb92211"/><p id="8971ecd4-e514-4f9a-a1a1-d715c054894c" class="">
+</p><p id="1524ddc2-ac78-4cf1-b2cb-56d3c90f5b8e" class="">Apart from this, I love photographs, words, exploring new things, travelling, and making friends. :)</p><h1 id="4229cec5-b0b4-42ce-9e62-4664768cc6bc" class="">🌏 Connect with me</h1><p id="9c50777d-8e38-4537-af36-5ef8b22047cb" class="">📝 <a href="https://drive.google.com/file/d/1f05qfLiw7WPMApXjh7UK79DLKRxFlh0p/view?usp=sharing"><strong>Curriculum vitae</strong></a></p><p id="22e86542-d198-456c-8c2c-49a92a64d7ec" class=""><strong>📧 </strong><strong><a href="mailto:aman.goel185@gmail.com">Email</a></strong></p><p id="528c4333-99bf-429b-aba4-4011ee8361c7" class="">💻 <strong><a href="https://github.com/amangoel185">GitHub</a></strong></p><p id="8f0c230a-60b4-4831-afc8-8ac704ac1679" class=""><strong>🐦 </strong><strong><a href="http://twitter.com/mightaswellcode">Twitter</a></strong></p><p id="9bdb4939-9c20-4aa9-846d-447cdb5b2492" class=""><strong>🔗 </strong><strong><a href="https://linkedin.com/in/amangoel185">LinkedIn</a></strong></p><hr id="85eb469b-34c5-48b0-8ff6-41cd2eb92211"/><p id="8971ecd4-e514-4f9a-a1a1-d715c054894c" class="">
 </p></div></article></body></html>
